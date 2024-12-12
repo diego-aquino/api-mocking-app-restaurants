@@ -1,73 +1,71 @@
-# Busca de Restaurantes - Aplicando Mocks de API
+# Restaurant Search - Applying API Mocks
 
-Esta aplicação permite buscar restaurantes bem avaliados no mundo, usando a
-[Places API do Google Maps](https://developers.google.com/maps/documentation/places/web-service).
+This application allows you to search for highly rated restaurants around the
+world using the
+[Google Maps Places API](https://developers.google.com/maps/documentation/places/web-service).
 
-## 1. Acesso
+## 1. Access
 
-[![Abrir no Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/diego-aquino/api-mocking-app-restaurants?startScript=dev&file=README.md)
+[![Open in Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/diego-aquino/api-mocking-app-restaurants?startScript=dev&file=README.md)
 
-## 2. Projeto
+## 2. Project
 
-Arquivos importantes:
+Important files:
 
-- [`src/server/app.ts`](./src/server/app.ts): arquivo principal da aplicação,
-  onde o servidor está implementado.
+- [`src/server/app.ts`](./src/server/app.ts): main application file, where the
+  server is implemented.
 - [`src/clients/GoogleMapsPlacesClient.ts`](./src/clients/googleMaps/GoogleMapsPlacesClient.ts):
-  classe que faz as chamadas HTTP para a Places API.
-- [`tests/restaurants.test.ts`](./tests/restaurants.test.ts): arquivo para os
-  testes da busca de restaurantes.
+  class that makes HTTP calls to the Places API.
+- [`tests/restaurants.test.ts`](./tests/restaurants.test.ts): file for
+  restaurant search tests.
 
-Comandos úteis:
+Useful commands:
 
-- `npm install`: instala as **dependências** do projeto.
-- `npm run dev`: inicia o **servidor** em modo de desenvolvimento.
-- `npm run test`: executa os **testes** da aplicação em modo watch.
-- `npm run types:check`: verifica se há **erros de tipo** no código.
+- `npm install`: installs the project's **dependencies**.
+- `npm run dev`: starts the **server** in development mode.
+- `npm run test`: runs the application's **tests** in watch mode.
+- `npm run types:check`: checks for **type errors** in the code.
 
-Ferramentas de mock:
+Mock tools:
 
 - **MSW**: https://github.com/mswjs/msw
 - **Zimic**: https://github.com/zimicjs/zimic/wiki
 
-## 3. Places API do Google Maps
+## 3. Google Maps Places API
 
-- Documentação OpenAPI:
-  - Versão atual:
+- OpenAPI Documentation:
+  - Current version:
     [`openapi.yaml`](https://gist.githubusercontent.com/diego-aquino/21b772332f2455a827166ac3b64db052/raw/b9aed7f76a91bf216cee5fb37fe2fd1e0d959c80/google-maps-places-api-current.openapi.yaml)
-    ([Visualizar no Swagger UI](https://editor-next.swagger.io/?url=https://gist.githubusercontent.com/diego-aquino/21b772332f2455a827166ac3b64db052/raw/b9aed7f76a91bf216cee5fb37fe2fd1e0d959c80/google-maps-places-api-current.openapi.yaml))
-  - Versão nova:
-    [`openapi.yaml`](https://gist.githubusercontent.com/diego-aquino/a0554434e8ac73ece2f5d787727b227f/raw/b9a8cac11b2f186130ba72379d52ba142ba4a2f7/google-maps-places-api-new.openapi.yaml)
-    ([Visualizar no Swagger UI](https://editor-next.swagger.io/?url=https://gist.githubusercontent.com/diego-aquino/a0554434e8ac73ece2f5d787727b227f/raw/b9a8cac11b2f186130ba72379d52ba142ba4a2f7/google-maps-places-api-new.openapi.yaml))
+    ([View in Swagger UI](https://editor-next.swagger.io/?url=https://gist.githubusercontent.com/diego-aquino/21b772332f2455a827166ac3b64db052/raw/b9aed7f76a91bf216cee5fb37fe2fd1e0d959c80/))
 
 ### 3.1. Text Search
 
-- [Documentação](https://developers.google.com/maps/documentation/places/web-service/search-text)
-  - [Códigos de status](https://developers.google.com/maps/documentation/places/web-service/search-text#PlacesSearchStatus)
+- [Documentation](https://developers.google.com/maps/documentation/places/web-service/search-text)
+  - [Status](https://developers.google.com/maps/documentation/places/web-service/search-text#PlacesSearchStatus)
 
-Exemplos de requisição:
+Request examples:
 
-- Sucesso
+- Success
   ```bash
   npm run example current success
   ```
-- Erro
+- Failure
   ```bash
   npm run example current error
   ```
 
 ### 3.2. Text Search (New)
 
-- [Documentação](https://developers.google.com/maps/documentation/places/web-service/text-search)
-- [Guia de migração](https://developers.google.com/maps/documentation/places/web-service/migrate-text)
+- [Documentation](https://developers.google.com/maps/documentation/places/web-service/text-search)
+- [Migration guide](https://developers.google.com/maps/documentation/places/web-service/migrate-text)
 
-Exemplos de requisição:
+Request examples:
 
-- Sucesso
+- Success
   ```bash
   npm run example new success
   ```
-- Erro
+- Failure
   ```bash
   npm run example new error
   ```
